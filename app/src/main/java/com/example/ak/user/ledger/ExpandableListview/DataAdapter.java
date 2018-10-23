@@ -40,7 +40,7 @@ public class DataAdapter extends BaseExpandableListAdapter
     }
 
     @Override
-    public Object getGroup(int i) {
+    public Object getGroup(int i){
         return deplist.get(i);
     }
 
@@ -52,8 +52,8 @@ public class DataAdapter extends BaseExpandableListAdapter
     }
 
     @Override
-    public long getGroupId(int groupPos) {
-        return groupPos;
+    public long getGroupId(int i) {
+        return i;
     }
 
     @Override
@@ -67,18 +67,19 @@ public class DataAdapter extends BaseExpandableListAdapter
     }
 
     @Override
-    public View getGroupView(int grouPos, boolean isExpanded, View convertView, ViewGroup parent)
+    public View getGroupView(int i, boolean isExpanded, View convertView, ViewGroup viewGroup)
     {
-        CostItemsInfo hederinfo = (CostItemsInfo)getGroup(grouPos);
+        CostItemsInfo headerinfo = (CostItemsInfo)getGroup(i);
 
-        if (convertView == null)
+        if (convertView==null)
         {
-            LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.cost_items,null);
+
+
+
 
         }
 
-        TextView  heading = (TextView) convertView.findViewById(R.id.heading);
+
 
         return null;
     }

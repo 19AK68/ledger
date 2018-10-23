@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/cost_items"
+        android:id="@+id/tv_cost_items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -14,9 +16,9 @@
 
         />
     <TextView
-        android:id="@+id/child_items"
+        android:id="@+id/tv_child_items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/cost_items"/>
+        android:layout_toRightOf="@+id/tv_cost_items"/>
 
 </RelativeLayout>
