@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import com.example.ak.user.ledger.R;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -74,24 +75,44 @@ public class DataAdapter extends BaseExpandableListAdapter
         if (convertView==null)
         {
 
-
-
+            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = layoutInflater.inflate(R.layout.cost_items,null);
 
         }
 
+        TextView heading = (TextView) convertView.findViewById(R.id.heading);
+        heading.setText(headerinfo.getName().trim());
 
 
-        return null;
+        return convertView;
     }
 
     @Override
-    public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup)
+    public View getChildView(int groupPos, int childPos, boolean isLastChild, View convertView, ViewGroup viewGroup)
     {
-        return null;
+
+        Cost_SubItems_Info detailinfo = (Cost_SubItems_Info) getChild(groupPos, childPos);
+
+        if (convertView==null)
+        {
+
+            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = layoutInflater.inflate(R.layout.cost_subitems,null);
+
+        }
+
+        TextView sequence = (TextView) convertView.findViewById(R.id.tv_cost_items);
+        sequence.setText(detailinfo.getSequence().trim()+".");
+
+        TextView childitem = (TextView) convertView.findViewById(R.id.tv_child_items);
+        childitem.setText(detailinfo.getName().trim());
+
+
+        return convertView;
     }
 
     @Override
     public boolean isChildSelectable(int i, int i1) {
-        return false;
+        return true;
     }
 }
