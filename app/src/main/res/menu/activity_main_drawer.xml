@@ -7,14 +7,14 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/cost24"
-            android:title="Cost" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
             android:title="Incom" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/nav_ExpandableListView"
+            android:icon="@drawable/ic_view_list_black_24dp"
+            android:title="Cost" />
+        <item
+            android:id="@+id/nav_ListView"
+            android:icon="@drawable/ic_list_black_24dp"
             android:title="Slideshow" />
         <item
             android:id="@+id/nav_manage"
